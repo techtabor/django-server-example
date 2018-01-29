@@ -13,10 +13,13 @@ def index(request):
 <html lang="en">
 <head>
   <title>Tabor teszt</title>
+  <link href="/static/tabor.css" rel="stylesheet">
+  <link rel="shortcut icon" type="image/png" href="/static/logo-small-256.png">
 </head>
 
 <body>
-  <p>Elemek listája:</p>
+  <img src="/static/logo-small-256.png" alt="Techtabor"/>
+  <h1>Elemek listája:</h1>
   <ul>
 """)
     
