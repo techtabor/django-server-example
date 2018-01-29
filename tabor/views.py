@@ -7,6 +7,7 @@ from django.conf import settings
 def index(request):
     print(settings.BASE_DIR)
     
+    # Ez jöhetne adatbázisból
     elements = ["Egy", "Ketto", "Harom"]
     
     context = {
