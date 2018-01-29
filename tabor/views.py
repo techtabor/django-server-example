@@ -5,6 +5,7 @@ from django.urls import path
 
 
 def index(request):
+    # Ez jöhetne adatbázisból
     elements = ["Egy", "Ketto", "Harom"]
 
     page = []
