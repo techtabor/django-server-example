@@ -1,34 +1,19 @@
 from django.shortcuts import render
 
-from django.http import HttpResponse
 from django.urls import path
+from django.conf import settings
 
 
 def index(request):
-    elements = ["Egy", "Ketto", "Harom"]
-
-    page = []
-    page.append("""
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <title>Tabor teszt</title>
-  <link href="/static/tabor.css" rel="stylesheet">
-  <link rel="shortcut icon" type="image/png" href="/static/logo-small-256.png">
-</head>
-
-<body>
-  <img src="/static/logo-small-256.png" alt="Techtabor"/>
-  <h1>Elemek listája:</h1>
-  <ul>
-""")
+    print(settings.BASE_DIR)
     
-    for element in elements:
-        page.append("    <li>{}</li>\n".format(element))
-        
-    page.append("  </ul>\n</body>")
+    elements = ["Egy", "Ketto", "Harom"]
+    
+    context = {
+        'elements': elements,
+    }
 
-    return HttpResponse("".join(page))
+    return render(request, 'tabor/index.html', context)
     
 urlpatterns = [
     path('', index, name='index'),
